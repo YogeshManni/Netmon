@@ -1,0 +1,87 @@
+<mxfile host="app.diagrams.net" modified="2025-02-03T17:27:00.000Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" version="24.2.6" etag="4Jh7HtH0lRgVQZ5vI9m4" type="device">
+  <diagram name="Page-1" id="75ae5057-2f1f-65bc-8c60-2ed877a87a6d">
+    <mxGraphModel dx="946" dy="565" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" value="Start" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="360" y="40" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" value="Authentication (Optional)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="335" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="decision" value="Is the user logged in?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="335" y="240" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="dashboard" value="Dashboard" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="335" y="380" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="discovery" value="Device Discovery" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="335" y="480" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="actions" value="Device Actions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="335" y="580" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="modal" value="Operation Modal" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="335" y="680" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="monitor" value="Real-Time Monitoring" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="335" y="780" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="logout" value="Logout" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="360" y="880" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;endFill=1;" parent="1" source="start" target="auth" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;endFill=1;" parent="1" source="auth" target="decision" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;endFill=1;" parent="1" source="decision" target="dashboard" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;endFill=1;" parent="1" source="dashboard" target="discovery" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;endFill=1;" parent="1" source="discovery" target="actions" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;endFill=1;" parent="1" source="actions" target="modal" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;endFill=1;" parent="1" source="modal" target="monitor" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=classic;endFill=1;" parent="1" source="monitor" target="logout" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;endArrow=classic;endFill=1;dashed=1;" parent="1" source="decision" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="485" y="285" as="sourcePoint" />
+            <mxPoint x="585" y="285" as="targetPoint" />
+            <mxPoint x="535" y="285" as="targetPoint" />
+            <mxPoint x="535" y="285" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="485" y="285" />
+              <mxPoint x="585" y="285" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="login_page" value="Login Page" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="585" y="240" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=0.5;entryY=0;endArrow=classic;endFill=1;dashed=1;" parent="1" source="login_page" target="dashboard" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="240" as="sourcePoint" />
+            <mxPoint x="660" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="660" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
