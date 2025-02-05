@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('devices', function (Blueprint $table) {
             $table->id();
-            $table->string('ip')->unique();
+            $table->string('ip',191)->unique();
             $table->string('hostname');
             $table->enum('status', ['online', 'offline'])->default('offline');
             $table->timestamps();
