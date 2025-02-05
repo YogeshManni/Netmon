@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend
+    ports:
+      - "5173:5173"  # Expose port 5173 of the container (Vite's default) to port 5173 on the host
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules  # Avoid overwriting node_modules
+    working_dir: /usr/src/app
+    command: sh -c "npm install --force && npm run dev -- --host 0.0.0.0"  # Forcefully install dependencies and run Vite
+    environment:
+      - VITE_API_URL=http://backend:8000  # Set up the backend URL for API requests (Vite will use this)
+    depends_on:
+      - backend  # Ensures frontend starts after the backend
+
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    ports:
+      - "8000:8000"  # Expose port 8000 for Laravel API (Laravel's default)
+    networks:
+      - netmon_network
+    environment:
+      - APP_ENV=local
+      - DB_CONNECTION=mysql
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=laravel_db
+      - DB_USERNAME=root
+      - DB_PASSWORD=secret
+    depends_on:
+      - mysql  # Ensures the backend starts after MySQL
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: laravel_db
+    ports:
+      - "3306:3306"  # Expose MySQL default port 3306
+    networks:
+      - netmon_network
+    volumes:
+      - mysql-data:/var/lib/mysql  # Persist MySQL data between restarts
+
+networks:
+  netmon_network:
+    driver: bridge
+
+volumes:
+  mysql-data:
